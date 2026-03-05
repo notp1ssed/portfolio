@@ -1,0 +1,9 @@
+*.pyc
+*.csv
+
+.venv
+**/ —pycache
+.egg- info
+*.pyd
+build
+extra
