@@ -1,4 +1,4 @@
-# Hi, I'm Rui! <br/><a href="https://github.com/notp1ssed">Financial Engineer</a> <a href="[https://www.linkedin.com/in/ruicarvalhocaseiro/](https://www.linkedin.com/in/ruicarvalhocaseiro/)">
+# Hi, I'm Rui!
 
 ## 👨‍💻 Financial Analysis Projects:
 
