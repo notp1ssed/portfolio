@@ -1,4 +1,4 @@
-This as a project performed academiccaly to evaluate ASML stock back in 2023.
+This as a project performed academically to evaluate ASML stock back in 2023.
 
 ![DCF Analysis](ASML_DCF.png)
 
