@@ -8,7 +8,9 @@
   - [Alpha Research with features engineering and Machine Learning](https://github.com/notp1ssed/portfolio/tree/main/assets/python/ML_AlphaResearch/001_BTC_Features_RandomForests.ipynb)
   - [Profitable Machine Learning Bitcoin trading strategy](https://github.com/notp1ssed/portfolio/tree/main/assets/python/ML_AlphaResearch/003_BTC_Features_LinearRegression.ipynb)
   - [Comparison of different Machine Learning models as predictors of Bitcoin returns](https://github.com/notp1ssed/portfolio/tree/main/assets/python/ML_AlphaResearch/004_BTC_TradAssets_ML_models.ipynb)
-  - [Trend Following Trading Strategy on Bitcoin](https://notp1ssed.github.io/portfolio/assets/docs/002_TrendFollowing_Strategy_bitcoin.html)
+  - [Study on market regime effects on Bitcoin returns](https://notp1ssed.github.io/portfolio/assets/docs/000_MarketRegimes_BTC.html)
+  - [Study on Hourly Seasonality Edge potential on Bitcoin](https://notp1ssed.github.io/portfolio/assets/docs/001_Seasonality_Backtest.html)
+  - [Trend Following Trading Strategy Development on Bitcoin](https://notp1ssed.github.io/portfolio/assets/docs/002_TrendFollowing_Strategy_bitcoin.html)
 
 ### **Excel**
   - [Real Estate Investment Project Evaluation](https://github.com/notp1ssed/portfolio/tree/main/assets/Excel/Real%20Estate%20Investment%20Project%20Analysis)
