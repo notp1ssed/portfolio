@@ -2,7 +2,6 @@
 
 ## about me:
   Financial Analyst with experience in credit risk and corporate financial analysis across European markets. Background in Financial Engineering with strong skills in portfolio analysis, financial modeling and Python.
-  *Exploring financial data, building models, and testing trading strategies through Python and data science.*
 
   **LinkedIn:** [linkedin.com/in/ruicarvalhocaseiro/](https://www.linkedin.com/in/ruicarvalhocaseiro/)  
   **Email:** ruicarvalhocaseiro@outlook.pt
