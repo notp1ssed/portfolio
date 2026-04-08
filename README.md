@@ -54,6 +54,22 @@
 
 ---
 
+### **A Quantitative Approach to Tactical Asset Allocation OOS performance study**
+
+#### Key Insights:
+  This study evaluated the GTAA model by Meb Faber (2013), over the 2013–2026 out-of-sample period. The tactical timing strategies did reduce volatility and drawdowns vs naive portfolios. Although they underperformed, especially 60/40, in both absolute and risk-adjusted terms. Results were driven largely by persistent exposure to the equity sleeves, particularly SPY and EFA, in a sample that strongly rewarded staying invested.
+  Inside the tactical group, longer and slower lookbacks worked better than the shorter ones.
+  
+  <p align="left">
+    <img src="assets/images/GTAA_MonteCarlo_MDD.png" width="400"/>
+    <br>
+    <em>Monte Carlo permutation returns MDD 95% CI</em>
+  </p>
+
+  - [Full Interactive report here!](https://notp1ssed.github.io/portfolio/assets/docs/005_GlobalTacticalAssetAllocation.html)
+
+---
+
 ### Others python
 
   - [Final Project Harvard University Python Course](https://github.com/notp1ssed/CS50P-FinalProject)
