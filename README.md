@@ -82,7 +82,7 @@
     <em>Bitcoin Cycles dashboard</em>
   </p>
 
-  - [Full Interactive report here!](https://notp1ssed.github.io/portfolio/assets/python/Bitcoin_cycles_dashboard/000_BTC_Cycles_Dashboard.html)
+  - [Full Interactive dashboard here!](https://notp1ssed.github.io/portfolio/assets/python/Bitcoin_cycles_dashboard/000_BTC_Cycles_Dashboard.html)
 
 ---
 
