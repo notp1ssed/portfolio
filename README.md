@@ -70,6 +70,22 @@
 
 ---
 
+### **Bitcoin cycles dashboard**
+
+#### Key Insights:
+  This dashboard analyzes Bitcoin cycles from four angles: full-cycle top-to-top comparisons, full-cycle bottom-to-bottom comparisons, top-to-bottom drawdowns, and Bitcoin’s halving cycle.
+  By aligning current market behavior with historical cycle structures, the dashboard provides a data-driven view of cycle progression, market maturity, and potential timing risk.
+  
+  <p align="left">
+    <img src="assets/images/BTC_cycles_dashboard.png" width="400"/>
+    <br>
+    <em>Bitcoin Cycles dashboard</em>
+  </p>
+
+  - [Full Interactive report here!](https://notp1ssed.github.io/portfolio/assets/python/Bitcoin_cycles_dashboard/000_BTC_Cycles_Dashboard.html)
+
+---
+
 ### Others python
 
   - [Final Project Harvard University Python Course](https://github.com/notp1ssed/CS50P-FinalProject)

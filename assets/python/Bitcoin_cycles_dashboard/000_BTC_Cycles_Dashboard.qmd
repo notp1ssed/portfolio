@@ -1,0 +1,189 @@
+---
+format: 
+    dashboard:
+        title: "Bitcoin Cycles Dashboard"
+        theme: darkly
+
+execute:
+  echo: false
+  warning: false
+  eval: true
+
+embed_resources: true
+jupyter: python3
+---
+
+```{python}
+#| include: false
+
+import pandas as pd
+# from datetime import datetime
+import plotly.graph_objects as go
+
+from MyCustomLibrary.data import BTC_Daily
+price = (BTC_Daily.droplevel(0, axis=1).loc[:,'Close']).copy()
+
+# _today_str = datetime.today()
+_today_str = price.index[-1].strftime("%Y-%m-%d")
+_AnnotationText = f" | Updated: {_today_str}"
+# _AnnotationText = f" | Updated: {_today_str} | Price: {round(price.iloc[-1])}"
+
+desired_rows = 225*7
+```
+
+
+````{python}
+#| include: false
+
+def plot_comparative_graph(
+    df: pd.DataFrame,
+    title:str='Performance Analysis',
+    x_axis_title:str='Days',
+    y_axis_title:str='ROI - log scale',
+    y_log_scale: bool=True,
+    watermark: bool=True
+    ):
+
+    # Fazer com que as séries temporais comecem do mesmo ponto
+    rebased_equities = (df / df.iloc[0]) * 100
+
+    cycles_compare = go.Figure()
+    # Iterate over the tickers list
+    for column in df.columns:
+        cycles_compare.add_trace(go.Scatter(name=f'{column}', x=df.index, y=rebased_equities[column]))
+
+    if watermark:
+        # Add watermark as text
+        cycles_compare.add_annotation(
+            x=0.5,
+            y=0.5,
+            textangle=0,
+            opacity=0.1,
+            text="Rui Caseiro",
+            showarrow=False,
+            font=dict(family="Arial", size=80, color="white"),
+            xref="paper",
+            yref="paper"
+        )
+
+    if y_log_scale:
+        cycles_compare.update_yaxes(type='log')
+
+    # Acrescentar tema
+    cycles_compare.update_layout(
+        template='plotly_dark',
+        hovermode="x unified",
+        title=dict(text=title, x=0.5, xanchor="center", y=0.95, yanchor="top",font=dict(size=16)),
+        margin=dict(l=40, r=40, t=50, b=50),
+        showlegend=False,
+        # legend=dict(orientation="h", x=0.5, xanchor="center", y=-0.2, yanchor="bottom", font=dict(size=10)),
+        xaxis=dict(title=x_axis_title, showgrid=False, zeroline=False, showline=False),
+        yaxis=dict(title=y_axis_title, showgrid=False, zeroline=False, showline=False, ticksuffix=' %')
+    )
+    
+    cycles_compare.show()
+
+````
+
+
+# Bitcoin Cycles
+
+
+## Row 1 {height=50%}
+```{python}
+
+## Definicao das datas dos tops de cada ciclo
+top13 = "2013-11-30"
+top17 = "2017-12-17"
+top21 = "2021-11-10"
+top25 = "2025-10-06"
+
+# Criação do DataFrame de ciclos com colunas ajustadas
+top_cycles = pd.DataFrame()
+top_cycles['cycle1'] = price.loc[:top13].reset_index(drop=True).reindex(range(desired_rows))
+top_cycles['cycle2'] = price.loc[top13:top17].reset_index(drop=True).reindex(range(desired_rows))
+top_cycles['cycle3'] = price.loc[top17:top21].reset_index(drop=True).reindex(range(desired_rows))
+top_cycles['cycle4'] = price.loc[top21:top25].reset_index(drop=True).reindex(range(desired_rows))
+top_cycles['cycle5'] = price.loc[top25:].reset_index(drop=True).reindex(range(desired_rows))
+
+plot_comparative_graph(
+    top_cycles, 
+    title=f'Bitcoin Top to Top Cycles {_AnnotationText}', 
+    x_axis_title='Days since Top'
+)
+
+```
+
+
+
+```{python}
+
+## Definicao das datas dos bottoms de cada ciclo
+bottom11 = "2011-10-01"
+bottom15 = "2015-01-14"
+bottom18 = "2018-12-15"
+bottom22 = "2022-11-21"
+
+# Criação do DataFrame de ciclos com colunas ajustadas
+bottom_cycles = pd.DataFrame()
+bottom_cycles['cycle1'] = price.loc[:bottom11].reset_index(drop=True).reindex(range(desired_rows))
+bottom_cycles['cycle2'] = price.loc[bottom11:bottom15].reset_index(drop=True).reindex(range(desired_rows))
+bottom_cycles['cycle3'] = price.loc[bottom15:bottom18].reset_index(drop=True).reindex(range(desired_rows))
+bottom_cycles['cycle4'] = price.loc[bottom18:bottom22].reset_index(drop=True).reindex(range(desired_rows))
+bottom_cycles['cycle5'] = price.loc[bottom22:].reset_index(drop=True).reindex(range(desired_rows))
+
+plot_comparative_graph(
+    bottom_cycles, 
+    title=f'Bitcoin Bottom to Bottom Cycles {_AnnotationText}', 
+    x_axis_title='Days since Bottom'
+)
+
+```
+
+
+
+## Row 2  {height=50%}
+```{python}
+
+## ciclos Halvings
+halving12 = "2012-11-28"
+halving16 = "2016-07-09"
+halving20 = "2020-05-11"
+halving24 = "2024-04-19"
+
+halving_cycles = pd.DataFrame().reset_index(drop=True).reindex(range(desired_rows))
+halving_cycles['cycle1'] = price.loc[:halving12].reset_index(drop=True).reindex(range(desired_rows))
+halving_cycles['cycle2'] = price.loc[halving12:halving16].reset_index(drop=True).reindex(range(desired_rows))
+halving_cycles['cycle3'] = price.loc[halving16:halving20].reset_index(drop=True).reindex(range(desired_rows))
+halving_cycles['cycle4'] = price.loc[halving20:halving24].reset_index(drop=True).reindex(range(desired_rows))
+halving_cycles['cycle5'] = price.loc[halving24:].reset_index(drop=True).reindex(range(desired_rows))
+
+plot_comparative_graph(
+    halving_cycles, 
+    title=f'Bitcoin Halving Cycles {_AnnotationText}', 
+    x_axis_title='Days since Halving'
+)
+
+```
+
+
+
+```{python}
+
+_desired_rows = 60*7
+
+top_bottom = pd.DataFrame().reset_index(drop=True).reindex(range(_desired_rows))
+top_bottom['cycle1'] = price.loc[top13:bottom15].reset_index(drop=True).reindex(range(_desired_rows))
+top_bottom['cycle2'] = price.loc[top17:bottom18].reset_index(drop=True).reindex(range(_desired_rows))
+top_bottom['cycle3'] = price.loc[top21:bottom22].reset_index(drop=True).reindex(range(_desired_rows))
+top_bottom['cycle4'] = price.loc[top25:].reset_index(drop=True).reindex(range(_desired_rows))
+
+plot_comparative_graph(
+    top_bottom, 
+    title=f'Bitcoin Top to Bottom Cycles {_AnnotationText}', 
+    x_axis_title='Days since Top',
+    y_axis_title='ROI',
+    y_log_scale=False
+)
+
+```
