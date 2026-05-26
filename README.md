@@ -86,6 +86,21 @@
 
 ---
 
+### **Cross-sectional sector momentum strategy - Case Study**
+
+#### Key Insights:
+  This study evaluated a cross-sectional sector momentum strategy using the 10 Fama-French industry portfolios over nearly a century of monthly data. Longer and slower momentum formation periods, particularly ROC9 and ROC12, consistently outperformed shorter lookbacks across most metrics. Out-of-sample, the selected ROC12 Top4 strategy achieved a similar CAGR to the Equal-Weight benchmark while substantially reducing volatility and drawdowns, particularly during major market crises. Overall, results suggest that sector momentum’s main strength lies in downside protection and improved risk-adjusted portfolio behavior rather than pure return maximization.
+  
+  <p align="left">
+    <img src="assets/images/SectorRotation_IS_optimization.png" width="400"/>
+    <br>
+    <em>In sample optimization Equity curves</em>
+  </p>
+
+  - [Full Interactive report here!](https://notp1ssed.github.io/portfolio/assets/docs/006_SectorRotation.html)
+
+---
+
 ### Others python
 
   - [Final Project Harvard University Python Course](https://github.com/notp1ssed/CS50P-FinalProject)
